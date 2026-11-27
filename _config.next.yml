@@ -1,0 +1,106 @@
+# ===============================================================
+# NexT 主题配置（覆盖文件）
+# 这里只写需要改动的项，未写的项沿用主题默认值：
+#   node_modules/hexo-theme-next/_config.yml
+# 主题文档：https://theme-next.js.org/docs/
+# ===============================================================
+
+# 配色方案：Muse | Mist | Pisces | Gemini
+scheme: Mist
+
+# 深色模式：侧边栏会出现日夜切换按钮，跟随系统或手动切换
+darkmode: true
+
+# 顶部菜单。格式：键名: 路径 || Font Awesome 图标
+# 键名使用 home/archives/tags/categories/about 时会自动翻译成中文
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  about: /about/ || fa fa-user
+
+menu_settings:
+  icons: true
+  badges: false
+
+# 侧边栏：position 为 left/right；display 为 post（仅文章页展开）| always | hide | remove
+sidebar:
+  position: left
+  display: post
+
+# 头像：把图片放到 source/images/avatar.png 后取消下面 url 的注释
+avatar:
+  #url: /images/avatar.png
+  rounded: true
+  rotated: false
+
+# 社交链接
+social:
+  GitHub: https://github.com/cunyu1903 || fab fa-github
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: true
+
+# 文章目录（TOC）
+toc:
+  enable: true
+  number: true
+  wrap: false
+  expand_all: false
+  max_depth: 6
+
+# 顶部阅读进度条
+reading_progress:
+  enable: true
+  start_at: left
+  position: top
+  reversed: false
+  color: "#37c6c0"
+  height: 3px
+
+# 代码块：显示语言名 + 一键复制按钮（mac 风格）
+codeblock:
+  theme:
+    light: default
+    dark: stackoverflow-dark
+  copy_button:
+    enable: true
+    style: mac
+  language: true
+
+# 底部信息
+footer:
+  since: 2026
+  icon:
+    name: fa fa-heart
+    animated: true
+    color: "#ff0000"
+  copyright: cunyu1903
+  powered: true
+
+# 文章底部显示知识共享许可协议
+creative_commons:
+  license: by-nc-sa
+  size: small
+  sidebar: false
+  post: true
+  language: deed.zh
+
+# 本地搜索（依赖 hexo-generator-searchdb，已安装）
+local_search:
+  enable: true
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# 字数统计（依赖 hexo-word-counter，已安装）
+symbols_count_time:
+  separated_meta: true
+  item_text_total: false
+
+# 阅读更多按钮
+read_more_btn: true
+excerpt_description: true
