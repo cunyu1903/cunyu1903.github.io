@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 存雨的技术小站
+title: 村雨的技术小站
 subtitle: 记录编程、折腾与踩坑
-description: 存雨的技术小站，一个记录编程、渗透测试与日常折腾的个人博客。
+description: 村雨的技术小站，一个记录编程、渗透测试与日常折腾的个人博客。
 keywords: 技术博客,Hexo,NexT,渗透测试,编程笔记
 author: cunyu1903
 language: zh-CN
@@ -30,6 +30,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - "_data/**" # NexT 自定义模板仅由主题引用，不单独渲染
 
 # Writing
 new_post_name: :title.md # File name of new posts

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <title>粉紫色海岸日落</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6d5b91"/>
+      <stop offset=".38" stop-color="#c58aa9"/>
+      <stop offset=".72" stop-color="#f1b7aa"/>
+      <stop offset="1" stop-color="#f8d8b5"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ad819e"/>
+      <stop offset=".35" stop-color="#746d96"/>
+      <stop offset="1" stop-color="#353c62"/>
+    </linearGradient>
+    <linearGradient id="shore" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d5a3a6"/>
+      <stop offset="1" stop-color="#725b78"/>
+    </linearGradient>
+    <radialGradient id="sunGlow">
+      <stop offset="0" stop-color="#fff8d7" stop-opacity=".95"/>
+      <stop offset=".28" stop-color="#ffe8c6" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffd4c3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffe6d5" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#ffe6d5" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#ffe6d5" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur24"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <rect width="1920" height="620" fill="url(#sky)"/>
+  <circle cx="1300" cy="385" r="310" fill="url(#sunGlow)"/>
+  <circle cx="1300" cy="385" r="78" fill="#fff1cf" opacity=".86" filter="url(#blur8)"/>
+  <circle cx="1300" cy="385" r="55" fill="#fff7dc" opacity=".9"/>
+
+  <g fill="#f8d6d0" opacity=".32" filter="url(#blur24)">
+    <ellipse cx="380" cy="230" rx="360" ry="68"/>
+    <ellipse cx="720" cy="150" rx="300" ry="54"/>
+    <ellipse cx="1540" cy="200" rx="340" ry="65"/>
+  </g>
+  <g fill="#6c587e" opacity=".34">
+    <path d="M0 520L190 400l120 66 190-150 205 174 160-105 210 135H0Z"/>
+    <path d="M1120 520l180-122 118 63 175-142 240 163 107-65v103Z"/>
+  </g>
+  <path d="M0 505c260-30 450 30 720 0s530-28 760 0 300 12 440-2v577H0Z" fill="url(#sea)"/>
+  <path d="M0 520c320-25 480 28 770 0s560-24 810 4 250 6 340-4" fill="none" stroke="#f9d7c2" stroke-opacity=".5" stroke-width="6"/>
+
+  <g fill="none" stroke="url(#wave)" stroke-linecap="round">
+    <path d="M80 610c180-36 300 30 510 0s360-28 610 8 360 12 600-12" stroke-width="10"/>
+    <path d="M280 700c170-30 280 22 450 0s310-20 500 10 300 14 480-6" stroke-width="7" opacity=".7"/>
+    <path d="M20 800c210-35 360 34 590 0s410-18 640 14 410 10 640-10" stroke-width="12" opacity=".48"/>
+    <path d="M540 890c170-24 280 20 460 0s350-14 560 10" stroke-width="6" opacity=".45"/>
+  </g>
+
+  <path d="M0 870c240-80 390-60 590 10 170 60 360 80 560 50 270-40 440-20 770 90v60H0Z" fill="url(#shore)"/>
+  <path d="M0 870c240-80 390-60 590 10 170 60 360 80 560 50 270-40 440-20 770 90" fill="none" stroke="#f4c9bd" stroke-opacity=".62" stroke-width="14"/>
+  <path d="M0 950c280-70 430 20 700 56 280 38 480-28 740 20 200 36 330 38 480 54H0Z" fill="#332e50" opacity=".55"/>
+
+  <g fill="#fff4dc" opacity=".65">
+    <circle cx="200" cy="125" r="2.5"/><circle cx="330" cy="82" r="2"/>
+    <circle cx="1020" cy="105" r="2.5"/><circle cx="1130" cy="175" r="1.8"/>
+    <circle cx="1700" cy="95" r="2.4"/><circle cx="1810" cy="170" r="1.8"/>
+  </g>
+  <g fill="none" stroke="#4d4268" stroke-width="5" stroke-linecap="round" opacity=".55">
+    <path d="M260 340q20-18 40 0q20-18 40 0"/>
+    <path d="M390 290q14-12 28 0q14-12 28 0"/>
+  </g>
+</svg>

@@ -1,0 +1,244 @@
+// 首页全屏 Hero，仅由 body-end.njk 在首页第一页输出。
+.home-hero {
+  align-items: center;
+  background: #504468 url('/images/hero-bg.svg') center center / cover no-repeat;
+  display: flex;
+  height: 100vh;
+  height: 100svh;
+  justify-content: center;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  &::before {
+    background: linear-gradient(180deg, rgba(25, 20, 48, .38), rgba(40, 24, 60, .08) 45%, rgba(24, 20, 45, .45));
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+}
+
+.home-hero-content {
+  color: #fff;
+  margin-top: -4vh;
+  max-width: 900px;
+  padding: 96px 24px 72px;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 3px 24px rgba(24, 17, 48, .45);
+  z-index: 1;
+}
+
+.home-hero-kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  margin: 0 0 18px;
+  opacity: .85;
+}
+
+.home-hero-title {
+  color: #fff;
+  font-size: clamp(38px, 6vw, 66px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.home-hero-subtitle {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  letter-spacing: 1px;
+  margin: 24px auto 0;
+  min-height: 30px;
+}
+
+.home-hero-cursor {
+  animation: homeHeroBlink .8s steps(1) infinite;
+  border-right: 2px solid rgba(255, 255, 255, .9);
+  display: inline-block;
+  height: 1.2em;
+  margin-left: 5px;
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.home-hero-button {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, .13);
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 14px;
+  gap: 8px;
+  padding: 11px 24px;
+  transition: background .2s, color .2s, transform .2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, .28);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+}
+
+.home-hero-primary {
+  background: rgba(255, 255, 255, .92);
+  border-color: transparent;
+  color: #4a3d64;
+  text-shadow: none;
+
+  &:hover {
+    background: #fff;
+    color: #352a4b;
+  }
+}
+
+.home-hero-scroll {
+  bottom: 24px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 34px;
+  left: 50%;
+  line-height: 1;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: homeHeroFloat 1.8s ease-in-out infinite;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+body:has(.home-hero) {
+  .main > .column {
+    background: transparent;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background .25s, box-shadow .25s;
+    z-index: 30;
+
+    &.is-scrolled {
+      backdrop-filter: blur(16px);
+      background: rgba(36, 29, 55, .82);
+      box-shadow: 0 4px 24px rgba(20, 16, 35, .18);
+      position: fixed;
+    }
+  }
+
+  header.header {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .site-title,
+  .menu-item a,
+  .site-nav-right a,
+  .site-nav-toggle .toggle-line,
+  .popup-trigger {
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(20, 15, 40, .45);
+  }
+
+  .site-nav-toggle .toggle-line {
+    background: #fff;
+  }
+
+  .logo-line {
+    background: rgba(255, 255, 255, .9);
+  }
+
+  .menu-item a:hover,
+  .popup-trigger:hover {
+    background: rgba(255, 255, 255, .14);
+  }
+
+  .main-inner {
+    background: var(--content-bg-color);
+    box-shadow: 0 -12px 45px rgba(30, 22, 50, .12);
+    margin-top: 100vh;
+    margin-top: 100svh;
+    padding-top: 56px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@keyframes homeHeroBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes homeHeroFloat {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
+}
+
+@media (max-width: 767px) {
+  .home-hero-content {
+    margin-top: 0;
+    padding: 108px 20px 72px;
+  }
+
+  .home-hero-kicker {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .home-hero-title {
+    font-size: 38px;
+  }
+
+  .home-hero-subtitle {
+    font-size: 15px;
+    margin-top: 18px;
+  }
+
+  .home-hero-actions {
+    margin-top: 26px;
+  }
+
+  body:has(.home-hero) {
+    header.header {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .main-inner {
+      padding-top: 32px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-cursor,
+  .home-hero-scroll {
+    animation: none;
+  }
+
+  .home-hero-button {
+    transition: none;
+  }
+}

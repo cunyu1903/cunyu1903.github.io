@@ -1,0 +1,66 @@
+{% if page and page.path == 'index.html' %}
+<section class="home-hero" aria-label="{{ config.title }}">
+  <div class="home-hero-content">
+    <p class="home-hero-kicker">PROGRAMMING · SECURITY · NOTES</p>
+    <h2 class="home-hero-title">{{ config.title }}</h2>
+    <p class="home-hero-subtitle">
+      <span id="home-hero-typed">{{ config.subtitle }}</span><span class="home-hero-cursor" aria-hidden="true"></span>
+    </p>
+    <div class="home-hero-actions">
+      <a class="home-hero-button home-hero-primary" href="#main-content">
+        <i class="fa-solid fa-book-open" aria-hidden="true"></i> 阅读文章
+      </a>
+      <a class="home-hero-button" href="https://github.com/cunyu1903" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+      </a>
+    </div>
+  </div>
+  <a class="home-hero-scroll" href="#main-content" aria-label="滚动到文章列表">
+    <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+  </a>
+</section>
+<script>
+(() => {
+  const main = document.querySelector('.main-inner');
+  if (main) main.id = 'main-content';
+
+  const header = document.querySelector('.main > .column');
+  const updateHeader = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 32);
+  };
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  const target = document.getElementById('home-hero-typed');
+  if (!target || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const phrases = [
+    {{ config.subtitle | dump | safe }},
+    '分享编程、渗透测试与学习笔记',
+    '把复杂问题写成清晰答案'
+  ];
+  let phrase = 0;
+  let character = 0;
+  let deleting = false;
+  target.textContent = '';
+
+  const type = () => {
+    const text = phrases[phrase];
+    character += deleting ? -1 : 1;
+    target.textContent = text.slice(0, character);
+
+    let delay = deleting ? 45 : 100;
+    if (!deleting && character === text.length) {
+      deleting = true;
+      delay = 2200;
+    } else if (deleting && character === 0) {
+      deleting = false;
+      phrase = (phrase + 1) % phrases.length;
+      delay = 450;
+    }
+    window.setTimeout(type, delay);
+  };
+  window.setTimeout(type, 700);
+})();
+</script>
+{% endif %}

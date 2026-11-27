@@ -5,6 +5,11 @@
 # 主题文档：https://theme-next.js.org/docs/
 # ===============================================================
 
+# 自定义首页：全屏 Hero 与样式，不修改主题源码
+custom_file_path:
+  bodyEnd: source/_data/body-end.njk
+  style: source/_data/styles.styl
+
 # 配色方案：Muse | Mist | Pisces | Gemini
 scheme: Mist
 
