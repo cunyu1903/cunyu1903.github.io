@@ -124,6 +124,13 @@
 }
 
 body:has(.home-hero) {
+  // 用 padding 把正文推到首屏之后：margin 会与 body 发生外边距塌陷，
+  // 导致整个 body 下移、首屏露出空白。
+  .main {
+    padding-top: 100vh;
+    padding-top: 100svh;
+  }
+
   .main > .column {
     background: transparent;
     left: 0;
@@ -173,8 +180,6 @@ body:has(.home-hero) {
   .main-inner {
     background: var(--content-bg-color);
     box-shadow: 0 -12px 45px rgba(30, 22, 50, .12);
-    margin-top: 100vh;
-    margin-top: 100svh;
     padding-top: 56px;
     position: relative;
     z-index: 2;
